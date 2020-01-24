@@ -7,8 +7,11 @@
         <%= f.label :email %>
         <%= f.text_field(:email, class: "form") %>
 
-        <%= f.label :password_digest %>
-        <%= f.text_field(:password_digest, class: "form") %>
+        <%= f.label :password %>
+        <%= f.text_field(:password, class: "form") %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.text_field(:password_confirmation, class: "form") %>
 
         <%= f.submit("登録", class: "submit-btn") %>
     <% end %>
