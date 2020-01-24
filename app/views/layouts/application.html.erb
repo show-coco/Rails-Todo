@@ -5,11 +5,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <nav>
+        <p id="logo">Kusa</p>
+        <div class="menu">
+          <ul>
+            <li class="menu-item">ログイン</li>
+            <li class="menu-item">新規登録</li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
     <%= yield %>
   </body>
 </html>

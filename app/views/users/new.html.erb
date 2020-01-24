@@ -1,2 +1,15 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<div class="new_form">
+    <%= form_for @user do |f|  %>
+        <%= f.label :name %>
+        <%= f.text_field(:name, class: "form") %>
+
+        <%= f.label :email %>
+        <%= f.text_field(:email, class: "form") %>
+
+        <%= f.label :password_digest %>
+        <%= f.text_field(:password_digest, class: "form") %>
+
+        <%= f.submit("登録", class: "submit-btn") %>
+    <% end %>
+</div>
