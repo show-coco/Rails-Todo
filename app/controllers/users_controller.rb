@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     
     if @user.save
-      # ToDoのホームへリダイレクト
+      flash[:success] = "登録が完了しました"
+      redirect_to @user
     else
       render 'new.html.erb'
     end
@@ -22,7 +23,10 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
-  def user_params
-    params.require(:user).permit(:name, :email)
-  end
+
+  private 
+  
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
 end
