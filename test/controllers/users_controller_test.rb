@@ -1,19 +1,11 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get users_new_url
-    assert_response :success
+  test "should route to new" do
+    assert_routing 'users/new', { controller: "users", action: "new"}
   end
 
-  test "should get show" do
-    get users_show_url
-    assert_response :success
+  test "should routes to show" do
+    assert_routing 'users/1', { controller: "users", action: "show", id: "1" }
   end
-
-  test "should get login" do
-    get users_login_url
-    assert_response :success
-  end
-
 end

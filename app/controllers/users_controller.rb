@@ -1,13 +1,13 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new()
+    @user = User.new
   end
 
   def create
-    @user = User.new(params[:users])
+    @user = User.new(user_params)
     
     if @user.save
-      # リダイレクト
+      # ToDoのホームへリダイレクト
     else
       render 'new.html.erb'
     end
@@ -20,5 +20,9 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
   end
 end
