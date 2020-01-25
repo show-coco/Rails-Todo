@@ -8,9 +8,9 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:success] = "登録が完了しました"
-      redirect_to @user
+      # ToDoリスト画面へリダイレクト
     else
-      render 'new.html.erb'
+      render 'new'
     end
   end
 

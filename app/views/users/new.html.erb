@@ -1,20 +1,21 @@
+<div class="container" >
+    <div class="form">
+        <%= render "users/errors" %>
 
-<div class="new_form">
-    <%= render "users/errors" %>
-    
-    <%= form_for @user do |f|  %>
-        <%= f.label :name %>
-        <%= f.text_field(:name, class: "form") %>
+        <%= form_for @user do |f|  %>
+            <%= f.label :name %>
+            <%= f.text_field(:name, class: "enter") %>
 
-        <%= f.label :email %>
-        <%= f.text_field(:email, class: "form") %>
+            <%= f.label :email %>
+            <%= f.text_field(:email, class: "enter") %>
 
-        <%= f.label :password %>
-        <%= f.password_field(:password, class: "form") %>
+            <%= f.label :password %>
+            <%= f.password_field(:password, class: "enter") %>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field(:password_confirmation, class: "form") %>
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field(:password_confirmation, class: "enter") %>
 
-        <%= f.submit("登録", class: "submit-btn") %>
-    <% end %>
+            <%= f.submit("登録", class: "submit-btn") %>
+        <% end %>
+    </div>
 </div>

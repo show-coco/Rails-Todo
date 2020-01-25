@@ -1,0 +1,16 @@
+<div class="container" >
+    <div class="form">
+        <%= render "users/errors" %>
+
+        <%= form_for(:session, url: login_path)  do |f|  %>
+
+            <%= f.label :email %>
+            <%= f.text_field(:email, class: "enter") %>
+
+            <%= f.label :password %>
+            <%= f.password_field(:password, class: "enter") %>
+
+            <%= f.submit("ログイン", class: "submit-btn") %>
+        <% end %>
+    </div>
+</div>
