@@ -68,6 +68,24 @@ header {
     margin: 0 auto;
 }
 
+/* Flash */
+
+.flash {
+    background-color: #1e272e;
+    position: fixed;
+    bottom : 5%;
+    left: 20px;
+    width: 200px;
+    height: 60px;
+    text-align: center;
+    box-shadow: 1px 1px 2px;
+}
+
+.flash-success {
+    line-height: 60px;
+    color: white;
+}
+
 /* debug */
 
 .debug_dump {
