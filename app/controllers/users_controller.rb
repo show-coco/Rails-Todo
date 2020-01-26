@@ -28,6 +28,7 @@ class UsersController < ApplicationController
       flash[:success] = "編集が完了しました"
       redirect_to edit_user_path(@user)
     else
+      flash[:danger] = "編集に失敗しました"
       render 'edit'
     end
 

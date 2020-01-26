@@ -2,6 +2,7 @@ class TasksController < ApplicationController
   before_action :correct_user, only: [:index]
 
   def index
+    @user = User.find(params[:id])
   end
 
   private 
