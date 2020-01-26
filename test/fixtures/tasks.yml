@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  status: 
+  status: 1
   user: one
 
 two:
   title: MyString
-  status: 
+  status: 1
   user: two

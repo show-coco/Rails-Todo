@@ -2,7 +2,7 @@ require 'test_helper'
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
   test "should route to new" do
-    assert_routing 'users/new', { controller: "users", action: "new"}
+    assert_routing 'users', { controller: "users", action: "new"}
   end
 
   test "should routes to show" do

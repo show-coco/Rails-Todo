@@ -64,4 +64,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test 'associated tasks should be destroyed' do
+    @user.save
+    @user.tasks.create!(title: "task1")
+    assert_difference 'Task.count', -1 do
+      @user.destroy
+    end
+  end 
+
 end
