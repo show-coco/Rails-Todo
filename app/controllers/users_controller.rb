@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:success] = "登録が完了しました"
-      # ToDoリスト画面へリダイレクト
+      login(@user)
+      redirect_to tasks_path
     else
       render 'new'
     end

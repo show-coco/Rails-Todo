@@ -7,14 +7,17 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email])
     
     if @user && @user.authenticate(params[:session][:password])
+      login(@user)
       flash[:success] = "ログインしました"
+      redirect_to tasks_path
     else
       render 'new'
     end
   end
 
   def destroy
-
+    logout
+    redirect_to login_path
   end
 
   private

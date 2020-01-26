@@ -17,8 +17,13 @@
         <p id="logo">Kusa</p>
         <div class="menu">
           <ul>
+          <% if logged_in? %>
+            <li class="menu-item"><%= link_to "プロフィール", '#' %></li>
+            <li class="menu-item"><%= link_to "ログアウト", logout_path,  method: :delete  %></li>
+          <% else %>
             <li class="menu-item"><%= link_to "ログイン", login_path  %></li>
             <li class="menu-item"><%= link_to "新規登録", new_user_path %></li>
+          <% end %>
           </ul>
         </div>
       </nav>
