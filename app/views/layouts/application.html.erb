@@ -18,6 +18,7 @@
         <div class="menu">
           <ul>
           <% if logged_in? %>
+            <li class="menu-item"><%= link_to "ToDo", tasks_path(current_user) %></li>
             <li class="menu-item"><%= link_to "プロフィール", edit_user_path(current_user) %></li>
             <li class="menu-item"><%= link_to "ログアウト", logout_path,  method: :delete  %></li>
           <% else %>

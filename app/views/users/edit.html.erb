@@ -1,6 +1,22 @@
 <div class="container">
-    <h3><%= @user.name %></h3>
-    <p><%= @user.email %></p>
+    <div class="form">
+        <%= render "users/errors" %>
 
+        <%= form_for @user do |f| %>
+            <%= f.label :name %>
+            <%= f.text_field(:name, class: "enter") %>
+
+            <%= f.label :email %>
+            <%= f.text_field(:email, class: "enter") %>
+
+            <%= f.label :password %>
+            <%= f.password_field(:password, class: "enter") %>
+
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field(:password_confirmation, class: "enter") %>
+
+            <%= f.submit("保存", class: "submit-btn") %>
+        <% end %>
+    </div>
     <%= render 'layouts/flash' %>
 </div>
