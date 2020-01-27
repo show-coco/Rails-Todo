@@ -10,7 +10,8 @@
                         <% if task.status == 1 %>
                             <div class="task-item">
                                 <li><%= task.title %></li>
-                                <i class="fas fa-backspace"></i>
+                                <%= link_to(content_tag(:i, "", class: "fas fa-backspace") , tasks_path(task.id), method: :delete) %>
+                                <%= link_to(content_tag(:i, "", class: "fas fa-angle-double-right") , tasks_path(id: task.id, status: 2), method: :patch) %>
                             </div>
                         <% end %>
                     <% end %>
@@ -32,7 +33,9 @@
                         <% if task.status == 2 %>
                             <div class="task-item">
                                 <li><%= task.title %></li>
-                                <i class="fas fa-backspace"></i>
+                                <%= link_to(content_tag(:i, "", class: "fas fa-backspace") , tasks_path(task.id), method: :delete) %>
+                                <%= link_to(content_tag(:i, "", class: "fas fa-angle-double-right") , tasks_path(id: task.id, status: 3), method: :patch) %>
+                                <%= link_to(content_tag(:i, "", class: "fas fa-angle-double-left") , tasks_path(id: task.id, status: 1), method: :patch) %>
                             </div>
                         <% end %>
                     <% end %>
@@ -55,7 +58,8 @@
                         <% if task.status == 3 %>
                             <div class="task-item">
                                 <li><%= task.title %></li>
-                                <i class="fas fa-backspace"></i>
+                                <%= link_to(content_tag(:i, "", class: "fas fa-backspace") , tasks_path(task.id), method: :delete) %>
+                                <%= link_to(content_tag(:i, "", class: "fas fa-angle-double-left") , tasks_path(id: task.id, status: 2), method: :patch) %>
                             </div>
                         <% end %>
                     <% end %>

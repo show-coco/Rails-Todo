@@ -18,6 +18,25 @@ class TasksController < ApplicationController
     end
   end
 
+  def update
+    p params
+    @task = Task.find(params[:id])
+    if @task.update_attribute(:status, params[:status])
+      flash[:success] = "タスクをスライドしました"
+      redirect_to tasks_path(current_user)
+    else 
+      flash[:danger] = "スライドに失敗しました"
+      redirect_to tasks_path(current_user)
+    end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    flash[:success] = "タスクを削除しました"
+    redirect_to tasks_path(current_user.id)
+  end
+
   private 
 
     def correct_user
@@ -28,4 +47,5 @@ class TasksController < ApplicationController
     def tasks_params
       params.require(:task).permit(:title, :status)
     end
+
 end
