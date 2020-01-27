@@ -98,6 +98,39 @@ header a:hover {
     color: white;
 }
 
+/* Task */
+
+.task-column {
+    background-color: #ecf0f1;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.task-item {
+    height: 30px;
+    width: 80%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.task-item li{
+    line-height: 30px;
+    float: left;
+}
+
+.fas {
+    float: right;
+    padding-right: 10px;
+    line-height: 30px;
+}
+
+.fa-backspace {
+    color:#2d3436;
+}
+
+
 /* debug */
 
 .debug_dump {

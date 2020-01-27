@@ -1,7 +1,73 @@
 <div class="container">
     <h2>Task List</h2>
-    <h3>To Do</h3>
-    <h3>Doing</h3>
-    <h3>Done</h3>
+    <div class="row">
+        <div class="col-sm-4">
+          <div class="task-column">
+            <h3>To Do</h3>
+            <% if !@tasks.nil? %>
+                <ol>
+                    <% @tasks.each do |task| %>
+                        <% if task.status == 1 %>
+                            <div class="task-item">
+                                <li><%= task.title %></li>
+                                <i class="fas fa-backspace"></i>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </ol>
+            <% end %>
+
+            <%= form_for(@task, url: tasks_url(1)) do |f| %>
+                <%= f.text_field(:title, class: "task-enter") %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="task-column">
+            <h3>Doing</h3>
+            <% if !@tasks.nil? %>
+                <ol>
+                    <% @tasks.each do |task| %>
+                        <% if task.status == 2 %>
+                            <div class="task-item">
+                                <li><%= task.title %></li>
+                                <i class="fas fa-backspace"></i>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </ol>
+            <% end %>
+
+            <%= form_for(@task, url: tasks_url(2)) do |f| %>
+                <%= f.text_field(:title, class: "task-enter") %>
+            <% end %>
+          </div>
+        </div>
+
+        
+        <div class="col-sm-4">
+          <div class="task-column">
+            <h3>Done</h3>
+            <% if !@tasks.nil? %>
+                <ol>
+                    <% @tasks.each do |task| %>
+                        <% if task.status == 3 %>
+                            <div class="task-item">
+                                <li><%= task.title %></li>
+                                <i class="fas fa-backspace"></i>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </ol>
+            <% end %>
+
+            <%= form_for(@task, url: tasks_url(3)) do |f| %>
+                <%= f.text_field(:title, class: "task-enter") %>
+            <% end %>
+            </div>
+        </div>
+    </div>
+
     <%= render 'layouts/flash' %>
 </div>

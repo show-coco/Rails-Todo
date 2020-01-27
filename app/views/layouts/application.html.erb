@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -18,7 +19,7 @@
         <div class="menu">
           <ul>
           <% if logged_in? %>
-            <li class="menu-item"><%= link_to "ToDo", tasks_path(current_user) %></li>
+            <li class="menu-item"><%= link_to "タスク", tasks_path(current_user) %></li>
             <li class="menu-item"><%= link_to "プロフィール", edit_user_path(current_user) %></li>
             <li class="menu-item"><%= link_to "ログアウト", logout_path,  method: :delete  %></li>
           <% else %>
