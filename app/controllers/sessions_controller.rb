@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
   before_action :logged_in_user, only: [:new]
-  before_action :correct_user, only: [:destroy]
 
   # GET /login
   def new

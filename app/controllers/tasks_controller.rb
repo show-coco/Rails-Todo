@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :not_logged_in_user, only: [:index]
   before_action :correct_boad, only: [:index]
   before_action :correct_task, only: [:update, :destroy]
 
